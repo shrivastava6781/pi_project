@@ -1,70 +1,71 @@
-# Getting Started with Create React App
+# React Project Test
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Table of Contents
 
-## Available Scripts
+- [Requirements](#requirements)
+  - [User Roles](#user-roles)
+  - [Signup Page](#signup-page)
+  - [Login Page](#login-page)
+- [Student Dashboard](#student-dashboard)
+  - [My Responses Tab](#my-responses-tab)
+  - [Forms Tab](#forms-tab)
+- [Admin Dashboard](#admin-dashboard)
+  - [All Responses Tab](#all-responses-tab)
 
-In the project directory, you can run:
+## Requirements
 
-### `npm start`
+### User Roles
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- There are **2 different roles** in the database: **Admin** and **Student**.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### Signup Page
 
-### `npm test`
+- Create a **Signup page** with an **API** that allows users to:
+  - Register themselves.
+  - Choose their **role** (Admin or Student).
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Login Page
 
-### `npm run build`
+- Implement a **Login page** with an **API** that:
+  - Requires only **username** and **password**.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Student Dashboard
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- When a user logs in as a **Student**, they should see **2 tabs**:
+  1. **My Responses**
+  2. **Forms**.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### My Responses Tab
 
-### `npm run eject`
+- The **My Responses** tab should:
+  - Call an **API** to retrieve and display all the responses submitted by the student.
+  - Display the responses in the form of **Cards**.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+### Forms Tab
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+- The **Forms** tab should include a form with the following fields:
+  - Name
+  - Email
+  - Phone
+  - Profile Picture
+- **Each field is required**.
+- Upon submitting the form, the user should be redirected to the **My Responses** tab.
+- The latest response should be displayed in the **My Responses** tab.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## Admin Dashboard
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+- When logging in as an **Admin**, the user should see only **1 tab**: **All Responses**.
 
-## Learn More
+### All Responses Tab
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+- The **All Responses** tab should:
+  - Call an **API** to retrieve all the submitted responses by all users.
+  - Display the responses as **Cards**.
+- Each card should have a **delete button**.
+- Clicking the delete button should call an **API** to delete the response.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## Constraint
+- **using Redux is mandatory to store the submitted data and user information**
 
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## Optional
+- **Log Out Button** should be available to log out the user and admin from their account
